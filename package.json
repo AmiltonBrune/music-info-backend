@@ -15,7 +15,13 @@
     "db:undo:seed:all": "npx sequelize-cli db:seed:undo:all",
     "generate:migrate": "npx sequelize-cli migration:generate --name",
     "generate:seed": "npx sequelize-cli seed:generate --name",
-    "test": "npx jest --runInBand"
+    "test": "npm run test:common -- --silent --forceExit",
+    "test:common": "npx jest --detectOpenHandles",
+    "test:verbose": "npm run test:common -- --runInBand",
+    "test:unit": "npm run test:common -- --silent -c jest.config.unit.js",
+    "test:unit:verbose": "npm run test:common -- -c jest.config.unit.js",
+    "test:watch": "npm run test:common -- --watch",
+    "test:watch:unit": "npm run test:unit -- --watch"
   },
   "dependencies": {
     "compression": "^1.7.4",
