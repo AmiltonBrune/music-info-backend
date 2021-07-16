@@ -31,9 +31,6 @@ exports.handler = async ({ body, params: { id } }, res) => {
       message: 'User updated successfully.',
     })
   } catch (error) {
-    console.log('====================================')
-    console.log('error', error)
-    console.log('====================================')
     return res.status(httpStatus.BAD_REQUEST).json(
       getErrorsDefault({
         title: 'Error',

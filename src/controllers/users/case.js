@@ -33,12 +33,7 @@ exports.checkPreviousUser = async (req, res, next) => {
 
 exports.validateProfiles = async (req, res, next) => {
   if (!req.body.profiles)
-    return res.status(status.BAD_REQUEST).json(
-      getErrorsDefault({
-        title: 'Profile not informed!',
-        message: 'The user must be linked to at least one Profile.',
-      })
-    )
+    req.body.profiles = ['33b15b6a-c5fd-41f9-9bc8-f2811886f525']
 
   if (!req.body.profiles.length)
     return res.status(status.BAD_REQUEST).json(
