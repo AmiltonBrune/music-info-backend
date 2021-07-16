@@ -33,7 +33,7 @@ exports.checkPreviousUser = async (req, res, next) => {
 
 exports.validateProfiles = async (req, res, next) => {
   if (!req.body.profiles)
-    req.body.profiles = ['33b15b6a-c5fd-41f9-9bc8-f2811886f525']
+    req.body.profiles = ['5daf6ac6-8c82-49d1-93c2-615b5e903a52']
 
   if (!req.body.profiles.length)
     return res.status(status.BAD_REQUEST).json(
